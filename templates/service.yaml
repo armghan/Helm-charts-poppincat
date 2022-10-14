@@ -10,6 +10,7 @@ spec:
   ports:
   - name: http
     port: {{ .Values.service.port }}
+    targetPort: {{ .Values.image.containerPort }}
   type: {{ .Values.service.type }}
   selector:
   {{- include "poppin-api.selectorLabels" . | nindent 4 }}
