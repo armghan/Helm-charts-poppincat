@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "poppin-api.fullname" . }}
+  labels:
+    {{- include "poppin-api.labels" . | nindent 4 }}
+spec:
+  selector:
+    app: {{ .Values.projectName }}
+  ports:
+  - name: http
+    port: {{ .Values.service.port }}
+  type: {{ .Values.service.type }}
+  selector:
+  {{- include "poppin-api.selectorLabels" . | nindent 4 }}
