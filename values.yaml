@@ -7,7 +7,7 @@ image:
   repository: 610811086515.dkr.ecr.us-west-1.amazonaws.com/poppin-api
   pullPolicy: IfNotPresent
   tag: "v1.0.0"
-  containerPort: 80
+  containerPort: 3017
 
 imagePullSecrets:
   - name: regcred
@@ -61,7 +61,7 @@ resources:
     memory: 512Mi
 
 autoscaling:
-  enabled: true
+  enabled: false
   minReplicas: 3
   maxReplicas: 7
   targetCPUUtilizationPercentage: 80
