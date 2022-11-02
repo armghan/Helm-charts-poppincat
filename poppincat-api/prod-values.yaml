@@ -43,7 +43,7 @@ ingress:
     kubernetes.io/ingress.class: "nginx"
 #    cert-manager.io/cluster-issuer: letsencrypt-staging
   hosts:
-    - host: api-ingress.poppincat.com
+    - host: prod-api-ingress.poppincat.com
       paths:
         - path: /
           pathType: Prefix
