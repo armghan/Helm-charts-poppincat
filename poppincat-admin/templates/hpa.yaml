@@ -1,15 +1,15 @@
 {{- if .Values.autoscaling.enabled }}
-apiVersion: autoscaling/v2
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "poppin-api.fullname" . }}
+  name: {{ include "popin-admin.fullname" . }}
   labels:
-    {{- include "poppin-api.labels" . | nindent 4 }}
+    {{- include "popin-admin.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "poppin-api.fullname" . }}
+    name: {{ include "popin-admin.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
@@ -27,6 +27,6 @@ spec:
         name: memory
         target:
           averageUtilization: {{ .Values.autoscaling.targetMemoryUtilizationPercentage }}
-          type: Utilization        
+          type: Utilization 
     {{- end }}
 {{- end }}

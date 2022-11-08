@@ -61,9 +61,9 @@ resources:
     memory: 512Mi
 
 autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 7
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
   targetCPUUtilizationPercentage: 80
   targetMemoryUtilizationPercentage: 80
 
