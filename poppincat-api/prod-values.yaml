@@ -7,7 +7,7 @@ projectName: poppin-api
 image:
   repository: 610811086515.dkr.ecr.us-west-1.amazonaws.com/poppin-api
   pullPolicy: IfNotPresent
-  tag: production-c90c73ab
+  tag: production-d28296fe
   containerPort: 3017
 
 imagePullSecrets:
