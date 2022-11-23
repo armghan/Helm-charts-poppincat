@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "popin-admin.fullname" . }}
+  name: {{ include "poppincat-admin.fullname" . }}
   labels:
-    {{- include "popin-admin.labels" . | nindent 4 }}
+    {{- include "poppincat-admin.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "popin-admin.fullname" . }}
+    name: {{ include "poppincat-admin.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "popin-admin.name" -}}
+{{- define "poppincat-admin.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "popin-admin.fullname" -}}
+{{- define "poppincat-admin.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "popin-admin.chart" -}}
+{{- define "poppincat-admin.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "popin-admin.labels" -}}
-helm.sh/chart: {{ include "popin-admin.chart" . }}
-{{ include "popin-admin.selectorLabels" . }}
+{{- define "poppincat-admin.labels" -}}
+helm.sh/chart: {{ include "poppincat-admin.chart" . }}
+{{ include "poppincat-admin.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "popin-admin.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "popin-admin.name" . }}
+{{- define "poppincat-admin.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "poppincat-admin.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "popin-admin.serviceAccountName" -}}
+{{- define "poppincat-admin.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "popin-admin.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "poppincat-admin.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

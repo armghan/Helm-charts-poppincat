@@ -1,10 +1,10 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-projectName: popin-admin
+projectName: poppin-admin
 
 image:
-  repository: 610811086515.dkr.ecr.us-west-1.amazonaws.com/popin-admin
+  repository: 610811086515.dkr.ecr.us-west-1.amazonaws.com/poppin-admin
   pullPolicy: IfNotPresent
   tag: b34feb0c
   containerPort: 3015
@@ -49,7 +49,7 @@ ingress:
         - path: /
           pathType: Prefix
   # tls:
-  #  - secretName: popin-admin-tls
+  #  - secretName: poppin-admin-tls
   #    hosts:
   #      - demo.example.com
 
