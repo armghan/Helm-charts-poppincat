@@ -8,7 +8,7 @@ image:
   repository: 610811086515.dkr.ecr.us-west-1.amazonaws.com/poppin-admin
   pullPolicy: IfNotPresent
   tag: production-f4326220
-  containerPort: 3015
+  containerPort: 80
 
 imagePullSecrets:
   - name: regcred
@@ -56,11 +56,11 @@ ingress:
 
 resources:
   limits:
-    cpu: 500m
-    memory: 4096Mi
-  requests:
     cpu: 300m
-    memory: 2048Mi
+    memory: 1024Mi
+  requests:
+    cpu: 100m
+    memory: 512Mi
 
 autoscaling:
   enabled: true
