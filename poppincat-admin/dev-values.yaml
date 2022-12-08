@@ -6,8 +6,13 @@ projectName: poppin-admin
 image:
   repository: 610811086515.dkr.ecr.us-west-1.amazonaws.com/poppin-admin
   pullPolicy: IfNotPresent
+<<<<<<< HEAD
   tag: dev-3ab91ead
   containerPort: 3015
+=======
+  tag: dev-ce439e93
+  containerPort: 80
+>>>>>>> 4a3cefe (static nginx)
 
 imagePullSecrets:
   - name: regcred
