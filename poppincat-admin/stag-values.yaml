@@ -7,7 +7,7 @@ projectName: poppin-admin
 image:
   repository: 610811086515.dkr.ecr.us-west-1.amazonaws.com/poppin-admin
   pullPolicy: IfNotPresent
-  tag: staging-a5a0ac54
+  tag: staging-c6974238
   containerPort: 80
 
 imagePullSecrets:
